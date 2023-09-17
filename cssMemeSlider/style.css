@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #24282B;
+}
+
+.slider {
+    width: 50vw;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navigation {
+    /* position: absolute;
+    right: 0;
+    bottom: 1em; */
+    display: flex;
+    margin-top: 1em;
+}
+
+.bar {
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    background-color: #73B0FF;
+    border-radius: 50%;
+    transition: all 0.4s ease; 
+    margin-left: 0.5em;
+    box-sizing: border-box;
+}
+
+.navigation:last-child {
+    margin-right: 0.5em;
+}
+
+.bar:hover {
+    background-color: #fff;
+}
+
+input:checked + .bar {
+    background-color: transparent;
+    border: #73B0FF solid 0.2em;
+}
+
+input:checked + .bar:hover {
+    background-color: transparent;
+    border: #fff solid 0.2em;
+}
+
+input[name="radio"] {
+    display: none;
+}
+
+.slides {
+    width: 400%;
+    height: 80%;
+    display: flex;
+}
+
+.slide {
+    width: 25%;
+    transition: all 0.8s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.wrapperText {
+    width: 40vw;
+    overflow: hidden;
+}
+
+.text {
+    display: flex;
+    width:400%;
+}
+
+p {
+    border-color: #24282B;
+    color: #fff;
+    width: 25%;
+    margin-top: 1em;
+    font-size: 1em;
+    transition: all 0.8s ease;
+}
+
+body:has(#radio1:checked) .s1 {
+    margin-left: 0;
+}
+
+body:has(#radio2:checked) .s1 {
+    margin-left: -25%;
+}
+
+body:has(#radio3:checked) .s1 {
+    margin-left: -50%;
+}
+
+body:has(#radio4:checked) .s1 {
+    margin-left: -75%;
+}
+
+@media (max-width: 768px) {
+    .slide img {
+        object-fit: contain;
+    }
+
+    .slider {
+        width: 70vw;
+        height: 400px;
+    }
+
+    .wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .wrapperText {
+        width: 70vw;
+    }
+}
